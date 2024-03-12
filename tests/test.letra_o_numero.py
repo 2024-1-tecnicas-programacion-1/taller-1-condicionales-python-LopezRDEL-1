@@ -17,7 +17,20 @@ class TestLetraONumero(unittest.TestCase):
         valor_actual = evaluar('c')
         self.assertEqual(valor_esperado, valor_actual)
     
-    # TODO: Agrega tus otros casos de prueba aquí
+   def test_es_numero(self):
+        valor_esperado = "Es número"
+        valor_actual = evaluar('5')
+        self.assertEqual(valor_esperado, valor_actual)
+    
+    def test_caracter_especial(self):
+        valor_esperado = "Es caracter especial"
+        valor_actual = evaluar('*')
+        self.assertEqual(valor_esperado, valor_actual)
+    
+    def test_espacio(self):
+        valor_esperado = "Es espacio en blanco"
+        valor_actual = evaluar(' ')
+        self.assertEqual(valor_esperado, valor_actual)
     
 
 if __name__ == '__main__':
