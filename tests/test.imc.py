@@ -17,7 +17,21 @@ class TestIMC(unittest.TestCase):
         valor_actual = evaluar(50, 1.8,   20)
         self.assertEqual(valor_esperado, valor_actual)
     
-    # TODO: Agrega tus otros casos de prueba aquí
+   
+    def testNormal(self):
+        valor_esperado = "normal"
+        valor_actual = evaluar(70, 1.8, 30)
+        self.assertEqual(valor_esperado, valor_actual)
+    
+    def testSobrepeso(self):
+        valor_esperado = "sobrepeso"
+        valor_actual = evaluar(85, 1.8, 45)
+        self.assertEqual(valor_esperado, valor_actual)
+    
+    def testObesidad(self):
+        valor_esperado = "obesidad"
+        valor_actual = evaluar(100, 1.8, 60)
+        self.assertEqual(valor_esperado, valor_actual)
     
 
 if __name__ == '__main__':
