@@ -19,7 +19,32 @@ class TestDivision(unittest.TestCase):
         valor_actual = evaluar(14, 5)
         self.assertEqual(valor_esperado, valor_actual)
     
-    # TODO: Agrega tus otros casos de prueba aquí
+     def testDivisionInexacta(self):
+        valor_esperado = "La división no es exacta. \n" \
+                         "Cociente: 2\n" \
+                         "Residuo: 1"
+        valor_actual = evaluar(5, 2)
+        self.assertEqual(valor_esperado, valor_actual)
+    
+    def testDivisionPorCero(self):
+        valor_esperado = "No se puede dividir por cero."
+        valor_actual = evaluar(10, 0)
+        self.assertEqual(valor_esperado, valor_actual)
+    
+    def testNumerosNegativos(self):
+        valor_esperado = "La división es exacta. \n" \
+                         "Cociente: -3\n" \
+                         "Residuo: 0"
+        valor_actual = evaluar(-15, -5)
+        self.assertEqual(valor_esperado, valor_actual)
+    
+    def testDividendoNegativo(self):
+        valor_esperado = "La división no es exacta. \n" \
+                         "Cociente: -2\n" \
+                         "Residuo: 1"
+        valor_actual = evaluar(-5, 2)
+        self.assertEqual(valor_esperado, valor_actual)
+
     
 
 if __name__ == '__main__':
